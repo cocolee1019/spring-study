@@ -25,7 +25,8 @@
 			<property name="size" value="大杯" />
 		</bean>
 		
-		<bean id="juiceMaker2" class="okjjlee.aopdemo.beans.JuiceMaker2">
+		<bean id="juiceMaker2" class="okjjlee.aopdemo.beans.JuiceMaker2"
+				init-method="init" destroy-method="myDestroy">
 			<property name="beverageShop" value="贡茶" />
 			<property name="source" ref="source"/>
 		</bean>
