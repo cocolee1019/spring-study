@@ -25,8 +25,13 @@
 			<property name="size" value="大杯" />
 		</bean>
 		
+		<bean id="student" class="okjjlee.aopdemo.beans.Student" scope="prototype">
+			<property name="name" value="小猪" />
+			<property name="age" value="20" />
+		</bean>
+		
 		<bean id="juiceMaker2" class="okjjlee.aopdemo.beans.JuiceMaker2"
-				init-method="init" destroy-method="myDestroy">
+				init-method="init" destroy-method="myDestroy" scope="prototype">
 			<property name="beverageShop" value="贡茶" />
 			<property name="source" ref="source"/>
 		</bean>

@@ -1,6 +1,7 @@
 package okjjlee.aopdemo;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import okjjlee.aopdemo.beans.JuiceMaker2;
@@ -19,9 +20,9 @@ import okjjlee.aopdemo.beans.JuiceMaker2;
  * spring-context介绍：
  * ApplicationContext和WebApplicationContext在spring-context中定义，引入spring-context后，
  * 会自动引入spring-core和spring-beans。
- * 
+ * FileSystemXmlApplicationContext act = new FileSystemXmlApplicationContext("//media/cocolee/MyFiles/code/oxygen_jsp/aopdemo/src/main/java/okjjlee/aopdemo/spring-cfg.xml");
+    	JuiceMaker2 jui2 = (JuiceMaker2)act.getBean("juiceMaker2");
  */
-
 
 public class AppConfig
 {
@@ -29,6 +30,8 @@ public class AppConfig
     {
     	FileSystemXmlApplicationContext act = new FileSystemXmlApplicationContext("//media/cocolee/MyFiles/code/oxygen_jsp/aopdemo/src/main/java/okjjlee/aopdemo/spring-cfg.xml");
     	JuiceMaker2 jui2 = (JuiceMaker2)act.getBean("juiceMaker2");
+    	JuiceMaker2 jui2_1 = (JuiceMaker2)act.getBean("juiceMaker2");
+    	System.out.println(jui2 == jui2_1);
     	jui2.makeJuice();
     	act.close();
     }
